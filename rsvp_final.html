@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="tl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Melvin and Ella Wedding</title>
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- QR CODE LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
+  <style>
+
+    :root {
+      --bg-color: #fdfbf7;
+      --card-bg: #ffffff;
+      --gold-primary: #d4af37;
+      --gold-dark: #cc8b00;
+      --brown-text: #593e17;
+      --brown-dark: #3b280c;
+      --border-color: #e5d3b3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--brown-text);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+
+    /* =====================================
+       MAIN INVITATION CARD
+    ===================================== */
+
+    .invitation-card {
+      background: var(--card-bg);
+      width: 100%;
+      max-width: 700px;
+
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+      position: relative;
+    }
+    /* INVITATION PICTURES */
+    .invitation-pictures {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .invitation-picture {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .invitation-picture img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* =====================================
+       RIGHT PANEL
+    ===================================== */
+
+    .right-panel {
+      width: 100%;
+      padding: 40px 45px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+
+    /* =====================================
+       RSVP CONTENT
+    ===================================== */
+
+    .rsvp-content {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .rsvp-header {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      color: var(--brown-text);
+      margin-bottom: 8px;
+    }
+
+    .rsvp-header::after {
+      content: '';
+
+      display: block;
+      width: 120px;
+      height: 1px;
+
+      background-color: var(--brown-text);
+
+      margin: 8px auto 0;
+    }
+
+    .subtitle {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--brown-text);
+      margin-bottom: 15px;
+    }
+
+    .family-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5rem;
+      color: var(--gold-dark);
+
+      line-height: 1.1;
+      margin: 10px 0 20px;
+
+      font-weight: 400;
+    }
+
+    .representative-label {
+      display: block;
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-top: 8px;
+      color: var(--brown-text);
+    }
+
+    .seat-count-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+
+      color: var(--brown-text);
+      margin-bottom: 25px;
+    }
+
+    .seat-number {
+      font-size: 3rem;
+      font-weight: 700;
+
+      color: var(--gold-dark);
+      padding: 0 4px;
+    }
+
+
+    /* =====================================
+       ATTENDEE FORM
+    ===================================== */
+
+    .attendees-section {
+      width: 100%;
+      max-width: 450px;
+
+      margin: 0 auto 25px;
+    }
+
+    .attendees-label {
+      display: block;
+
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      margin-bottom: 15px;
+    }
+
+    .attendee-input {
+      width: 100%;
+
+      padding: 12px 15px;
+      margin-bottom: 10px;
+
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+
+      color: var(--brown-text);
+      outline: none;
+    }
+
+    .attendee-input:focus {
+      border-color: var(--gold-dark);
+    }
+
+    .submit-button {
+      width: 100%;
+
+      padding: 13px;
+      margin-top: 10px;
+
+      background-color: var(--brown-text);
+      color: white;
+
+      border: none;
+      border-radius: 5px;
+
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .submit-button:hover {
+      background-color: var(--gold-dark);
+    }
+
+    .submit-button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .instructions {
+      font-size: 0.92rem;
+      line-height: 1.6;
+
+      color: var(--brown-text);
+
+      max-width: 520px;
+      margin-bottom: 30px;
+    }
+
+    .deadline {
+      font-weight: 700;
+      color: var(--brown-dark);
+    }
+
+
+    /* =====================================
+       AFTER DECEMBER 1 DISPLAY
+    ===================================== */
+
+    #post-deadline-view {
+      display: none;
+
+      width: 100%;
+
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+      padding: 15px 0 25px;
+    }
+
+    .wedding-title {
+      font-family: 'Cinzel', serif;
+
+      font-size: 2.7rem;
+      font-weight: 600;
+
+      letter-spacing: 2px;
+      line-height: 1.4;
+
+      color: var(--brown-text);
+
+      margin-bottom: 25px;
+    }
+
+    .wedding-subtitle {
+      font-family: 'Great Vibes', cursive;
+
+      font-size: 2.7rem;
+      color: var(--gold-dark);
+
+      margin-bottom: 20px;
+    }
+
+    .family-qr-wrapper {
+      background: #ffffff;
+
+      border: 3px solid #bfa571;
+      border-radius: 15px;
+
+      padding: 15px;
+
+      box-shadow: 0 5px 20px rgba(191, 165, 113, 0.2);
+
+      margin: 10px auto 30px;
+    }
+
+    #family-qrcode {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #family-qrcode canvas,
+    #family-qrcode img {
+      display: block;
+
+      width: 240px;
+      height: 240px;
+    }
+
+    .family-qr-instruction {
+      font-size: 0.85rem;
+      line-height: 1.6;
+
+      color: var(--brown-text);
+
+      max-width: 400px;
+      margin-bottom: 25px;
+    }
+
+    .attendee-list-container {
+      width: 100%;
+      max-width: 500px;
+
+      text-align: left;
+
+      border-top: 1px solid var(--border-color);
+
+      padding-top: 25px;
+      margin-top: 10px;
+    }
+
+    .attendee-list-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+
+      font-weight: 600;
+      color: var(--brown-text);
+
+      text-align: center;
+
+      margin-bottom: 20px;
+    }
+
+    .attendee-representative {
+      font-size: 1rem;
+      font-weight: 600;
+
+      color: var(--brown-text);
+
+      text-align: center;
+
+      margin-bottom: 20px;
+    }
+
+    .attendee-representative span {
+      display: block;
+
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+
+      font-weight: 400;
+      color: var(--gold-dark);
+
+      margin-top: 5px;
+    }
+
+    .attendee-list {
+      list-style: none;
+
+      padding: 0;
+      margin: 0;
+    }
+
+    .attendee-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 12px 15px;
+      margin-bottom: 8px;
+
+      background: #fdfbf7;
+
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+
+      font-size: 0.95rem;
+      color: var(--brown-text);
+    }
+
+    .attendee-list li i {
+      color: var(--gold-dark);
+    }
+
+    .no-attendees {
+      text-align: center;
+
+      padding: 20px;
+
+      color: var(--brown-text);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+
+    /* =====================================
+       FACEBOOK LINKS
+    ===================================== */
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 15px;
+
+      font-size: 0.85rem;
+      color: var(--brown-text);
+
+      margin-top: 15px;
+      width: 100%;
+
+      border-top: 1px solid var(--border-color);
+
+      padding-top: 20px;
+    }
+
+    .footer-links a {
+      color: var(--brown-text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .divider {
+      color: var(--border-color);
+    }
+
+
+    /* =====================================
+       LEFT PANEL - EVENT DETAILS
+    ===================================== */
+
+    .left-panel {
+      width: 100%;
+
+      padding: 30px 25px;
+
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-around;
+      align-items: center;
+
+      text-align: center;
+
+      border-top: 2px solid var(--border-color);
+      gap: 20px;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 0;
+      flex: 1;
+    }
+
+    .icon-wrapper {
+      width: 75px;
+      height: 75px;
+
+      border-radius: 50%;
+      border: 2px solid var(--brown-text);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 12px;
+
+      color: var(--brown-text);
+      font-size: 22px;
+    }
+
+    .meta-title {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+
+      font-size: 1.75rem;
+      color: var(--brown-text);
+    }
+
+    .meta-detail {
+      font-size: 0.95rem;
+      font-weight: 600;
+
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      line-height: 1.3;
+      color: var(--brown-dark);
+    }
+
+    .meta-subdetail {
+      font-size: 0.9rem;
+      font-weight: 500;
+
+      line-height: 1.3;
+      color: var(--brown-dark);
+    }
+
+
+    /* =====================================
+       LOCATION QR CODES
+    ===================================== */
+
+    .location-qr-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 15px;
+      width: 100%;
+
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
+
+    .location-qr-box {
+      border: 2px solid #bfa571;
+      border-radius: 12px;
+
+      padding: 8px;
+
+      background: #ffffff;
+
+      box-shadow: 0 4px 15px rgba(191, 165, 113, 0.15);
+
+      flex-shrink: 0;
+    }
+
+    .location-qr-box canvas,
+    .location-qr-box img {
+      display: block;
+
+      width: 90px;
+      height: 90px;
+    }
+
+    .location-qr-link {
+      display: inline-block;
+
+      font-size: 0.7rem;
+      color: var(--gold-dark);
+
+      text-decoration: none;
+      font-weight: 600;
+
+      margin-top: 5px;
+    }
+
+    .location-qr-link:hover {
+      color: var(--brown-text);
+    }
+
+
+    /* =====================================
+       MOBILE RESPONSIVENESS
+    ===================================== */
+
+    @media (max-width: 768px) {
+
+      body {
+        padding: 12px;
+      }
+
+      .invitation-card {
+        flex-direction: column;
+      }
+
+      .right-panel {
+        width: 100%;
+        padding: 30px 20px;
+      }
+
+      .left-panel {
+        width: 100%;
+
+        flex-direction: column;
+
+        border-right: none;
+        border-top: 2px solid var(--border-color);
+
+        padding: 30px 20px;
+        gap: 25px;
+      }
+
+      .family-name {
+        font-size: 3rem;
+      }
+
+      .wedding-title {
+        font-size: 2rem;
+      }
+
+      .wedding-subtitle {
+        font-size: 2.2rem;
+      }
+
+      #family-qrcode canvas,
+      #family-qrcode img {
+        width: 210px;
+        height: 210px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .divider {
+        display: none;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="invitation-card">
+    <div class="invitation-pictures">
+    <div class="invitation-picture">
+            <img
+        src="https://lh3.googleusercontent.com/d/1mUrVWf9DtM7_6z9Tng85IFmCorzmSqet"
+        alt="Wedding Invitation"
+            >
+    </div>
+
+    <div class="invitation-picture">
+        <img src="https://lh3.googleusercontent.com/d/14ZdkLRFdcwOKE6HX2W4d0szQ_fov33Oi"
+             alt="Invitation Picture 2">
+    </div>
+
+    <div class="invitation-picture">
+        <img src="https://lh3.googleusercontent.com/d/10c-b2zj3ZqBFOKhOi8SLnPMf4bkvLOUc"
+             alt="Invitation Picture 3">
+    </div>
+  </div>
+
+
+    <!-- =====================================
+         RIGHT PANEL
+    ===================================== -->
+
+    <div class="right-panel">
+
+
+      <!-- =====================================
+           ORIGINAL RSVP CONTENT
+      ===================================== -->
+
+      <div id="rsvp-content" class="rsvp-content">
+
+        <h1 class="rsvp-header">
+          RSVP
+        </h1>
+
+        <p class="subtitle">
+          Nawa'y kayo ay makadalo
+        </p>
+
+
+        <div class="family-name">
+
+          <span id="representative-name"></span>
+
+          <span class="representative-label">
+            Kinatawan
+          </span>
+
+        </div>
+
+
+        <p class="seat-count-text">
+
+          Nakalaan po ang
+
+          <span class="seat-number"></span>
+
+          na upuan para sa inyong pamilya.
+
+        </p>
+
+
+        <!-- ATTENDEE FORM -->
+
+        <div class="attendees-section">
+
+          <label class="attendees-label">
+            ------ Pangalan ng mga dadalo ------
+          </label>
+
+          <div id="attendee-fields"></div>
+
+          <button
+            type="button"
+            id="submit-rsvp"
+            class="submit-button"
+          >
+            Isumite
+          </button>
+
+        </div>
+
+
+        <!-- RSVP INSTRUCTIONS -->
+
+        <p class="instructions">
+
+          Maaari po lamang na kumpirmahin ang inyong pagdalo
+          at ibigay ang buong pangalan ng bawat dadalo hanggang
+
+          <span class="deadline">
+            Disyembre 1, 2026
+          </span>.
+
+          Maraming salamat po!
+
+        </p>
+
+      </div>
+
+
+      <!-- =====================================
+           POST-DEADLINE DISPLAY
+      ===================================== -->
+
+      <div id="post-deadline-view">
+
+
+        <h1 class="wedding-title">
+          MELVIN AND ELLA WEDDING
+        </h1>
+
+        <p class="wedding-subtitle">
+          A Celebration of Love
+        </p>
+
+
+        <!-- FAMILY SPECIFIC QR CODE -->
+
+        <div class="family-qr-wrapper">
+
+          <div id="family-qrcode"></div>
+
+        </div>
+
+
+        <p class="family-qr-instruction">
+
+          I-scan ang QR code na ito upang makita ang
+          listahan ng mga dadalo mula sa inyong pamilya.
+
+        </p>
+
+
+        <!-- ATTENDEE INFORMATION -->
+
+        <div class="attendee-list-container">
+
+          <h2 class="attendee-list-heading">
+            <!-- Listahan Ng Mga dadalo -->
+          </h2>
+
+
+          <div class="attendee-representative">
+
+            <!-- Kinatawan: -->
+
+            <!-- <span id="post-deadline-representative">
+            </span> -->
+
+          </div>
+
+
+          <ul
+            id="post-deadline-attendees"
+            class="attendee-list"
+          ></ul>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================
+           FACEBOOK LINKS
+           REMAINS VISIBLE
+      ===================================== -->
+
+
+
+
+
+    <!-- =====================================
+         LEFT PANEL
+         REMAINS UNCHANGED
+    ===================================== -->
+
+    <div class="left-panel">
+
+
+      <!-- DATE AND TIME -->
+
+      <div class="meta-item">
+
+        <div class="icon-wrapper">
+          <i style="font-size:40px;" class="fa-regular fa-clock"></i>
+        </div>
+
+        <div class="meta-detail">
+          DEC. 22, 2026
+        </div>
+
+        <div class="meta-detail">
+          2PM
+        </div>
+
+      </div>
+
+
+      <!-- CEREMONY -->
+
+      <div class="meta-item">
+
+        <div class="meta-title">
+          Seremonya
+        </div>
+
+        <div class="location-qr-wrapper">
+
+          <div class="location-qr-box">
+
+            <div id="ceremony-qrcode"></div>
+
+          </div>
+
+        </div>
+
+        <div class="meta-subdetail">
+          Lokal ng Ilog National Highway
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/Xc6Z9DLea77eQVSW6"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="location-qr-link"
+        >
+
+          <i class="fa-solid fa-map-location-dot"></i>
+          View Location
+
+        </a>
+
+      </div>
+
+
+      <!-- RECEPTION -->
+
+      <div class="meta-item">
+
+        <div class="meta-title">
+          Piging
+        </div>
+
+        <div class="location-qr-wrapper">
+
+          <div class="location-qr-box">
+
+            <div id="reception-qrcode"></div>
+
+          </div>
+
+        </div>
+
+        <div class="meta-subdetail">
+          Glenda's Garden Resort
+        </div>
+
+        <a
+          href="https://maps.app.goo.gl/UwbDM4DiPUiLvMZ56"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="location-qr-link"
+        >
+
+          <i class="fa-solid fa-map-location-dot"></i>
+          View Location
+
+        </a>
+
+      </div>
+
+    </div>
+          <div class="footer-links">
+
+        <i class="fa-brands fa-facebook-f"></i>
+
+        <a
+          href="https://facebook.com/ellamari.liabres.16"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          facebook.com/ellamari.liabres.16
+        </a>
+
+        <span class="divider">|</span>
+
+        <a
+          href="https://facebook.com/melvin011"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          facebook.com/melvin011
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+<script>
+
+  // ==========================================
+  // 1. CONFIGURATION
+  // ==========================================
+
+  const GOOGLE_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxXoumd50airNz0eBakL1tCOY8j6cvF3KBTGMbH2mzHk2AnyKNyErYq95qWopZtax6T8g/exec";
+
+
+  const CEREMONY_MAP_URL =
+    "https://maps.app.goo.gl/Xc6Z9DLea77eQVSW6";
+
+
+  const RECEPTION_MAP_URL =
+    "https://maps.app.goo.gl/UwbDM4DiPUiLvMZ56";
+
+
+  // December 1, 2026
+  // JavaScript months start at zero.
+  const DEADLINE_DATE = new Date(2026, 11, 1, 0, 0, 0);
+
+
+  // ==========================================
+  // 2. GET FAMILY CODE
+  // ==========================================
+
+  const urlParams =
+    new URLSearchParams(window.location.search);
+
+  const familyCode =
+    (urlParams.get("code") || "").trim();
+
+
+  // ==========================================
+  // 3. CHECK POST-DEADLINE DATE
+  // ==========================================
+
+  function isPostDeadline() {
+
+    const today = new Date();
+
+    return today >= DEADLINE_DATE;
+
+  }
+
+
+  // ==========================================
+  // 4. GENERATE LOCATION QR CODES
+  // ==========================================
+
+  function generateLocationQRCodes() {
+
+    if (typeof QRCode === "undefined") {
+
+      console.error("QRCode library failed to load.");
+      return;
+
+    }
+
+    const ceremonyContainer =
+      document.getElementById("ceremony-qrcode");
+
+    const receptionContainer =
+      document.getElementById("reception-qrcode");
+
+
+    new QRCode(ceremonyContainer, {
+
+      text: CEREMONY_MAP_URL,
+
+      width: 90,
+      height: 90,
+
+      colorDark: "#593e17",
+      colorLight: "#ffffff",
+
+      correctLevel: QRCode.CorrectLevel.H
+
+    });
+
+
+    new QRCode(receptionContainer, {
+
+      text: RECEPTION_MAP_URL,
+
+      width: 90,
+      height: 90,
+
+      colorDark: "#593e17",
+      colorLight: "#ffffff",
+
+      correctLevel: QRCode.CorrectLevel.H
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 5. GENERATE FAMILY-SPECIFIC QR CODE
+  // ==========================================
+
+ function generateFamilyQRCode(family) {
+
+  if (typeof QRCode === "undefined") {
+    console.error("QRCode library failed to load.");
+    return;
+  }
+
+  const qrContainer = document.getElementById("family-qrcode");
+
+  qrContainer.innerHTML = "";
+
+  const attendees = Array.isArray(family.attendees)
+    ? family.attendees
+    : [];
+
+  const attendeeText = attendees.length
+    ? attendees.map((name, index) => `${index + 1}. ${name}`).join("\n")
+    : "Wala pang naisumiteng listahan.";
+
+  const qrText = [
+    "MELVIN AND ELLA WEDDING",
+    "",
+    "Kinatawan:",
+    family.representative || "Not available",
+    "",
+    "Listahan Ng Mga dadalo:",
+    attendeeText
+  ].join("\n");
+
+  new QRCode(qrContainer, {
+    text: qrText,
+    width: 240,
+    height: 240,
+    colorDark: "#593e17",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.L
+  });
+
+}
+
+  // ==========================================
+  // 6. DISPLAY FULL-PAGE MESSAGE
+  // ==========================================
+
+  function showFullPage(title, message, isSuccess = false) {
+
+    document.body.innerHTML = `
+
+      <div style="
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        padding:25px;
+        font-family:'Montserrat',sans-serif;
+        color:#593e17;
+        text-align:center;
+        background-color:#fdfbf7;
+      ">
+
+        <div style="
+          width:75px;
+          height:75px;
+          border-radius:50%;
+          background-color:#593e17;
+          color:white;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-size:35px;
+          margin-bottom:25px;
+        ">
+          ${isSuccess ? "✓" : "!"}
+        </div>
+
+        <h1 style="
+          font-family:'Playfair Display',serif;
+          font-size:2rem;
+          margin-bottom:15px;
+        ">
+          ${title}
+        </h1>
+
+        <p style="
+          font-size:1rem;
+          line-height:1.7;
+          max-width:450px;
+        ">
+          ${message}
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+
+  // ==========================================
+  // 7. GET FAMILY INFORMATION USING JSONP
+  // ==========================================
+
+  function getFamilyByCode(code) {
+
+    return new Promise((resolve, reject) => {
+
+      const callbackName =
+        "rsvpCallback_" +
+        Date.now() +
+        "_" +
+        Math.floor(Math.random() * 100000);
+
+      const script = document.createElement("script");
+
+
+      const timeout = setTimeout(() => {
+
+        cleanup();
+
+        reject(
+          new Error("The server took too long to respond.")
+        );
+
+      }, 15000);
+
+
+      function cleanup() {
+
+        delete window[callbackName];
+
+        script.remove();
+
+        clearTimeout(timeout);
+
+      }
+
+
+      window[callbackName] = function(response) {
+
+        cleanup();
+
+        resolve(response);
+
+      };
+
+
+      script.onerror = function() {
+
+        cleanup();
+
+        reject(
+          new Error("Unable to connect to the RSVP server.")
+        );
+
+      };
+
+
+      script.src =
+        GOOGLE_SCRIPT_URL +
+        "?code=" + encodeURIComponent(code) +
+        "&callback=" + encodeURIComponent(callbackName);
+
+
+      document.body.appendChild(script);
+
+    });
+
+  }
+
+
+  // ==========================================
+  // 8. VERIFY RSVP SUBMISSION
+  // ==========================================
+
+  async function verifyRSVPSubmission(code) {
+
+    for (let attempt = 1; attempt <= 8; attempt++) {
+
+      await new Promise(resolve =>
+        setTimeout(resolve, 750)
+      );
+
+      const response =
+        await getFamilyByCode(code);
+
+
+      if (
+        response.success === true &&
+        response.alreadySubmitted === true
+      ) {
+
+        return true;
+
+      }
+
+    }
+
+    return false;
+
+  }
+
+
+  // ==========================================
+  // 9. DISPLAY POST-DEADLINE INFORMATION
+  // ==========================================
+
+  function displayPostDeadline(family) {
+
+    // Hide original RSVP form
+
+    document.getElementById("rsvp-content").style.display =
+      "none";
+
+
+    // Show new wedding section
+
+    document.getElementById("post-deadline-view").style.display =
+      "flex";
+
+
+    // Display representative
+
+    // document.getElementById(
+    //   "post-deadline-representative"
+    // ).textContent = family.representative || "Not available";
+
+
+    // Generate family-specific QR
+
+    generateFamilyQRCode(family);
+
+
+    // Display attendee names
+
+    const attendeeList =
+      document.getElementById("post-deadline-attendees");
+
+    attendeeList.innerHTML = "";
+
+
+    const attendees = Array.isArray(family.attendees)
+      ? family.attendees
+      : [];
+
+
+    if (attendees.length === 0) {
+
+      const emptyMessage =
+        document.createElement("p");
+
+      emptyMessage.className = "no-attendees";
+
+      emptyMessage.textContent =
+        "Wala pang naisumiteng listahan ng mga dadalo para sa pamilyang ito.";
+
+      attendeeList.appendChild(emptyMessage);
+
+      return;
+
+    }
+
+
+    // attendees.forEach((name, index) => {
+
+    //   const listItem =
+    //     document.createElement("li");
+
+    //   const icon =
+    //     document.createElement("i");
+
+    //   icon.className = "fa-solid fa-user";
+
+    //   const nameText =
+    //     document.createElement("span");
+
+    //   nameText.textContent =
+    //     `${index + 1}. ${name}`;
+
+
+    //   listItem.appendChild(icon);
+    //   listItem.appendChild(nameText);
+
+    //   attendeeList.appendChild(listItem);
+
+    // });
+
+  }
+
+
+  // ==========================================
+  // 10. DISPLAY RSVP FORM
+  // ==========================================
+
+  function displayRSVPForm(family) {
+
+    document.getElementById("rsvp-content").style.display =
+      "flex";
+
+    document.getElementById("post-deadline-view").style.display =
+      "none";
+
+
+    document.getElementById("representative-name").textContent =
+      family.representative || "";
+
+
+    document.querySelector(".seat-number").textContent =
+      family.seats;
+
+
+    const attendeeContainer =
+      document.getElementById("attendee-fields");
+
+    attendeeContainer.innerHTML = "";
+
+
+    for (let i = 1; i <= Number(family.seats); i++) {
+
+      const input =
+        document.createElement("input");
+
+      input.type = "text";
+
+      input.className = "attendee-input";
+
+      input.placeholder =
+        `Buong Pangalan ng Dadalo ${i}`;
+
+      input.name = `attendee_${i}`;
+
+      input.required = true;
+
+      input.maxLength = 150;
+
+      input.autocomplete = "name";
+
+      attendeeContainer.appendChild(input);
+
+    }
+
+
+    // ==========================================
+    // SUBMIT RSVP
+    // ==========================================
+
+    const submitButton =
+      document.getElementById("submit-rsvp");
+
+
+    submitButton.onclick = async function() {
+
+      if (submitButton.disabled) {
+        return;
+      }
+
+
+      const inputs = Array.from(
+        document.querySelectorAll(".attendee-input")
+      );
+
+
+      const attendees = inputs.map(input =>
+        input.value.trim()
+      );
+
+
+      // Validate empty fields
+
+      if (attendees.some(name => name === "")) {
+
+        alert(
+          "Mangyaring kumpletuhin ang pangalan ng lahat ng dadalo."
+        );
+
+        const emptyInput = inputs.find(
+          input => input.value.trim() === ""
+        );
+
+        if (emptyInput) {
+          emptyInput.focus();
+        }
+
+        return;
+
+      }
+
+
+      const payload = {
+
+        code: family.code,
+
+        attendees: attendees
+
+      };
+
+
+      console.log("RSVP Submission:", payload);
+
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Isinusumite...";
+
+
+      try {
+
+        // Send data to Google Apps Script
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+
+          method: "POST",
+
+          mode: "no-cors",
+
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+
+          body: JSON.stringify(payload)
+
+        });
+
+
+        // Verify if data was saved
+
+        const saved =
+          await verifyRSVPSubmission(familyCode);
+
+
+        if (!saved) {
+
+          throw new Error(
+            "Hindi namin makumpirma ang inyong pagsusumite. Pakisubukan muli."
+          );
+
+        }
+
+
+        showFullPage(
+          "Maraming Salamat Po!",
+          "Sa Pagsusumite ng Inyong Impormasyon.",
+          true
+        );
+
+
+      } catch (error) {
+
+        console.error("RSVP Submission Error:", error);
+
+        submitButton.disabled = false;
+
+        submitButton.textContent = "Isumite";
+
+        alert(
+          error.message ||
+          "Hindi naipadala ang inyong impormasyon. Pakisubukan muli."
+        );
+
+      }
+
+    };
+
+  }
+
+
+  // ==========================================
+  // 11. INITIALIZE RSVP APPLICATION
+  // ==========================================
+
+  async function initializeRSVP() {
+
+    if (!familyCode) {
+
+      showFullPage(
+        "Link not available",
+        "Paumanhin, hindi namin mahanap ang inyong invitation link."
+      );
+
+      return;
+
+    }
+
+
+    try {
+
+      const response =
+        await getFamilyByCode(familyCode);
+
+
+      console.log("Family Information:", response);
+
+
+      if (!response.success || !response.family) {
+
+        showFullPage(
+          "Link not available",
+          "Paumanhin, hindi namin mahanap ang inyong invitation link."
+        );
+
+        return;
+
+      }
+
+
+      const family = response.family;
+
+
+      // ==========================================
+      // CHECK DATE
+      // ==========================================
+
+      if (isPostDeadline()) {
+
+        // December 1 onwards:
+        // Show wedding heading, QR and attendee list.
+
+        displayPostDeadline(family);
+
+        return;
+
+      }
+
+
+      // ==========================================
+      // BEFORE DECEMBER 1
+      // ==========================================
+
+      if (response.alreadySubmitted) {
+
+        showFullPage(
+          "RSVP Already Submitted",
+          "Natanggap na namin ang inyong impormasyon. Maraming salamat po!"
+        );
+
+        return;
+
+      }
+
+
+      // Show normal RSVP form
+
+      displayRSVPForm(family);
+
+
+    } catch (error) {
+
+      console.error("RSVP Initialization Error:", error);
+
+      showFullPage(
+        "Something went wrong",
+        "Hindi namin makuha ang inyong invitation information. Pakisubukan muli mamaya."
+      );
+
+    }
+
+  }
+
+
+  // ==========================================
+  // 12. RUN APPLICATION
+  // ==========================================
+
+  generateLocationQRCodes();
+
+  initializeRSVP();
+
+</script>
+
+</body>
+</html>
